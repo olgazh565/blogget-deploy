@@ -1,5 +1,7 @@
 export const setToken = (token) => {
-  localStorage.setItem('bearer', JSON.stringify(token));
+  if (token) {
+    localStorage.setItem('bearer', JSON.stringify(token));
+  }
 };
 
 export const getToken = () => {

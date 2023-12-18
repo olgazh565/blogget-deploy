@@ -14,12 +14,12 @@ export const deleteToken = () => ({
 });
 
 export const tokenMiddleware = store => next => (action) => {
-  if (action.type === UPDATE_TOKEN) {
+  if (action.type === UPDATE_TOKEN && action.token) {
     setToken(action.token);
   }
 
   if (action.type === DELETE_TOKEN) {
-    setToken('');
+    localStorage.removeItem('bearer');
   }
 
   next(action);
