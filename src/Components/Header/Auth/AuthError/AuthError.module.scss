@@ -1,0 +1,56 @@
+.background {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  height: 100px;
+  padding: 20px;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 700;
+  z-index: 10;
+  background-color: #cc6633;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-animation: fadein 0.5s, ;
+  animation: fadein 0.5s;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  width: 15px;
+  height: 15px;
+  font-size: 0;
+}
+
+@-webkit-keyframes fadein {
+  from {
+      top: 0;
+      opacity: 0;
+  }
+
+  to {
+      top: 10px;
+      opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+      top: 0;
+      opacity: 0;
+  }
+
+  to {
+      top: 10px;
+      opacity: 1;
+  }
+}

@@ -1,0 +1,56 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.end {
+  width: 100%;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  outline: none;
+  background-color: var(--orange);
+  color: var(--white);
+  border: 1px solid transparent;
+  height: 41px;
+}
+
+.btn:hover {
+  background-color: var(--blue);
+}
+
+.btn:focus {
+  border-color: var(--blue);
+}
+
+.btn:active {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+.wrapper {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 41px;
+}
+
+.searchText {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
