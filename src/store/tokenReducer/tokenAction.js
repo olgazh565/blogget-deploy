@@ -14,7 +14,7 @@ export const deleteToken = () => ({
 export const tokenMiddleware = store => next => (action) => {
   if (action.type === UPDATE_TOKEN) {
     if (action.token) {
-      localStorage.setItem('bearer', JSON.stringify(action.token));
+      localStorage.setItem('bearer', action.token);
     }
   }
 

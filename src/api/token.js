@@ -7,7 +7,7 @@ export const getToken = () => {
   }
 
   if (localStorage.getItem('bearer')) {
-    token = JSON.parse(localStorage.getItem('bearer'));
+    token = localStorage.getItem('bearer');
   }
 
   return token;
