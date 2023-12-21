@@ -11,7 +11,6 @@ import {ReactComponent as TopIcon} from './img/top.svg';
 import {Text} from '../../../UI/Text/Text';
 import {useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {message} from 'antd';
 import {
   fetchPosts,
   resetPostsState
@@ -32,7 +31,6 @@ export const Tabs = () => {
   const dispatch = useDispatch();
   const {page, status} = useSelector(state => state.postsReducer);
   const token = useSelector(state => state.tokenReducer.token);
-  const [messageApi, contextHolder] = message.useMessage();
 
   const handleResize = () => {
     if (document.documentElement.clientWidth < 768) {
@@ -53,15 +51,8 @@ export const Tabs = () => {
     };
   }, []);
 
-  const warning = () => {
-    messageApi.open({
-      type: 'warning',
-      content: 'Для продолжения работы необходимо авторизоваться',
-    });
-  };
-
   const handleClick = (value, link) => {
-    if (!token) warning();
+    if (!token) alert('Для продолжения работы необходимо авторизоваться');
     setChosenTab(value);
     navigate(`/category/${link}`);
     if (page !== link && status) dispatch(resetPostsState());
@@ -70,7 +61,6 @@ export const Tabs = () => {
 
   return (
     <div className={style.container}>
-      {contextHolder}
       {isDropdown && (
         <div className={style.wrapperBtn}>
           <button
